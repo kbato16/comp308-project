@@ -11,7 +11,7 @@
     "ng": "ng",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
-    "start": "concurrently \"npm run tsc:w\" \"nodemon\" ",
+    "start": "concurrently \"npm run tsc:w\" \"npm run app\" ",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
