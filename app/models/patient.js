@@ -1,10 +1,9 @@
 let mongoose = require('mongoose');
 
 const patientSchema = mongoose.Schema({
-    studentNumber: String,
-    password: String,
     firstName: String,
     lastName: String,
+    password: String,
     address: String,
     city: String,
     phoneNumber: String,
@@ -12,10 +11,7 @@ const patientSchema = mongoose.Schema({
         type: String,
         index: true,
         match: /.+\@.+\..+/
-    },
-    program: String,
-    courses: [{type:mongoose.Schema.Types.ObjectId, ref:'Course'}]
-    
+    }
 },{
     collection: "patients"
 });
