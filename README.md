@@ -1,8 +1,8 @@
-#Group Project – Developing Apps using emerging Web Technologies
+# Group Project – Developing Apps using emerging Web Technologies
 
-##Due Date:	Week 13.
+## Due Date:	Week 13.
 
-##Purpose:	The purpose of this project is to:
+## Purpose:	The purpose of this project is to:
 •	Design and code web apps using emerging Web Frameworks
 •	Build a Rest API using Express
 •	Build a Front-End (Angular or React) that utilizes the Rest API 
@@ -13,7 +13,7 @@ Be sure to read the following general instructions carefully:
 -	You will have to demonstrate your solution in Week 13 and upload the solution on eCentennial through the project link in Dropbox folder, as well as publish it on Microsoft Azure Cloud, Amazon, or another Cloud platform.
 -	You VS project name should be named “YourGroupNameCOMP308Project” and should be zipped in a file YourGroupNameCOMP308Project.zip.
 
-##Project Specifications
+## Project Specifications
 
 Your client needs an application to help nurse practitioners to monitor patients during the first weeks of their release from the hospital and also help the patients to monitor their daily activities. Develop a web app that implements the following functionalities:
 
@@ -46,11 +46,11 @@ Apply MVC and responsive web design principles. Use CSS to create a nice look an
 •	React 16 or higher
 •	Vue.js
 
-##Evaluation:
-###Functionality:	
+## Evaluation:
+### Functionality:	
 - [ ] **10%** Mongo DB database (proper use of document structure)
 - [ ] **40%** Rest API MVC (proper use of design patterns)
 - [ ] **30%** Front End
 ### **10%** Friendliness	
 ### **10%** Innovation (intelligent use of symptoms using machine learning)	
-###Total	100%
+### Total	100%
