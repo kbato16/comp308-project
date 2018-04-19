@@ -1,19 +1,18 @@
 let mongoose = require('mongoose');
-
-const patientSchema = mongoose.Schema({
-    firstName: String,
-    lastName: String,
-    password: String,
-    address: String,
-    city: String,
-    phoneNumber: String,
-    email: {
-        type: String,
-        index: true,
-        match: /.+\@.+\..+/
-    }
-},{
-    collection: "patients"
+let Schema = mongoose.Schema;
+const patientSchema = Schema({
+  firstName: String,
+  lastName: String,
+  password: String,
+  vitals: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Vitals'
+  }],
+  conditions: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Conditions'
+  }]
+}, {
+  collection: "patients"
 });
-
-mongoose.model( 'Patient', patientSchema );
+mongoose.model('Patient', patientSchema);

@@ -14,7 +14,9 @@ let mongoose = require("mongoose");
 let db = require("./db");
 
 mongoose.connect(process.env.URI || db.URI);
-
+require('../app/models/patient');
+require('../app/models/vitals');
+require('../app/models/conditions');
 let mongoDB = mongoose.connection;
 mongoDB.once('open', () =>{
   console.log("Connected to DB...");
@@ -41,7 +43,6 @@ app.use(flash());
 //Configure and register passport
 app.use(passport.initialize());
 app.use(passport.session());
-
 
 app.use(express.static(path.join(__dirname, '../dist')));
 app.use('/lib', express.static(path.resolve('./node_modules')));
