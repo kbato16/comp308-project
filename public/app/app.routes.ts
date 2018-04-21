@@ -2,11 +2,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { NgModule } from '@angular/core';
 import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { AppComponent } from './app.component';
 
 const AppRoutes: Routes = [
     { path: 'login', component: LoginComponent },
-    { path: '', component: LoginComponent },
+    { path: 'signup', component: SignupComponent },
+    { path: '', component: HomeComponent }
 ];
 
 @NgModule({

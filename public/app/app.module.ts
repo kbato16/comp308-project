@@ -14,12 +14,18 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DataService } from './services/data.service';
 import { LoginService } from './services/login.service';
 import { RouterModule, Routes } from '@angular/router';
+import { SignupComponent } from './components/signup/signup.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
-    NavbarComponent
+    NavbarComponent,
+    SignupComponent,
+    HomeComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
