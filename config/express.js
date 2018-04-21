@@ -13,10 +13,18 @@ let methodOverride = require('method-override');
 let mongoose = require("mongoose");
 let db = require("./db");
 
+//https://stackoverflow.com/questions/38138445/node3341-deprecationwarning-mongoose-mpromise
+// To fix warning message below
+// (node:13268) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+mongoose.Promise = global.Promise;
+
 mongoose.connect(process.env.URI || db.URI);
+require('../app/models/user');
+require('../app/models/nurse');
 require('../app/models/patient');
 require('../app/models/vitals');
 require('../app/models/conditions');
+
 let mongoDB = mongoose.connection;
 mongoDB.once('open', () =>{
   console.log("Connected to DB...");

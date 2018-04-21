@@ -4,6 +4,9 @@ const app = require('./config/express');
 let express = require('express');
 let http = require('http');
 
+let configurePassport = require("./config/passport");
+const passport = configurePassport();
+
 //Get port from environment
 let port = normalizePort(process.env.PORT || '3000');
 app.set('port', '3000');
