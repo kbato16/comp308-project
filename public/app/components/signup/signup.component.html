@@ -1,6 +1,38 @@
-<h2 class="page-header">Sign up</h2>
-<br>
-<form class="container container-small">
+
+<form class="mx-auto col-10">
+  <h1 class="page-header">
+    New Patient Registration</h1>
+  <br>
+  <div class="form-group">
+    <label for="gender">Gender: </label>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male">
+      <label class="form-check-label" for="Male">Male</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female">
+      <label class="form-check-label" for="Female">Female</label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="title">Title: </label>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="title" id="inlineRadio1" value="mister">
+      <label class="form-check-label" for="mister">MR. </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="title" id="inlineRadio2" value="female">
+      <label class="form-check-label" for="miss">MS. </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="title" id="inlineRadio2" value="female">
+      <label class="form-check-label" for="missis">MRS. </label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="title" id="inlineRadio2" value="female">
+      <label class="form-check-label" for="doctor">DR. </label>
+    </div>
+  </div>
   <div class="form-row">
     <div class="col-5 form-group">
       <label>First Name</label>
@@ -11,8 +43,8 @@
       <input type="text" [(ngModel)]="lastName" name="lastName" class="form-control">
     </div>
     <div class="col-2 form-group">
-      <label>Student Number</label>
-      <input type="text" [(ngModel)]="studentNum" name="studentNum" class="form-control">
+      <label>DOB</label>
+      <input type="text" [(ngModel)]="dob" name="dob" class="form-control" placeholder="MM/DD/YYYY">
     </div>
   </div>
   <div class="form-row">
@@ -25,8 +57,8 @@
       <input type="text" [(ngModel)]="city" name="city" class="form-control">
     </div>
     <div class="col form-group">
-      <label>Phone Number</label>
-      <input type="text" [(ngModel)]="phoneNum" name="phoneNum" class="form-control">
+      <label>Province</label>
+      <input type="text" [(ngModel)]="prov" name="prov" class="form-control">
     </div>
   </div>
   <div class="form-row">
@@ -35,8 +67,8 @@
       <input type="text" [(ngModel)]="email" name="email" class="form-control">
     </div>
     <div class="col form-group">
-      <label>Program</label>
-      <input type="text" [(ngModel)]="program" name="program" class="form-control">
+      <label>Phone</label>
+      <input type="text" [(ngModel)]="phone" name="phone" class="form-control">
     </div>
   </div>
   <div class="form-group">

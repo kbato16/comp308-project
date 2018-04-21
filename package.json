@@ -13,7 +13,7 @@
     "tsc:w": "tsc -w",
     "postinstall": "ng build --prod",
     "app": "node server",
-    "start": "concurrently \"npm run tsc:w\" \"npm run app\" ",
+    "start": "concurrently \"npm run tsc:w\" \"npm run app\" \"ng build -w\"",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
