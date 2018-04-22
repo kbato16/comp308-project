@@ -1,10 +1,12 @@
 let express = require('express');
 let router = express.Router();
+
 let indexController = require('../controllers/index.controller');
+//let userController = require('../controllers/user.controller');
 let patientsController = require('../controllers/patient.controller');
 let conditionsController = require('../controllers/conditions.controller');
 let vitalsController = require('../controllers/vitals.controller');
-let passport = require('passport');
+let alertController = require('../controllers/alert.contoller');
 
 router.get('/api', indexController.index);
 
@@ -14,5 +16,8 @@ router.get('/api/vitals', vitalsController.readVitals);
 
 router.post('/api/signin', patientsController.signin);
 router.post('/api/signup', patientsController.signup);
+
+// precondition: login
+router.post('/api/alert', alertController.createAlert);
 
 module.exports = router;

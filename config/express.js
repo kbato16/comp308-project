@@ -24,6 +24,7 @@ require('../app/models/nurse');
 require('../app/models/patient');
 require('../app/models/vitals');
 require('../app/models/conditions');
+require('../app/models/alert');
 
 let mongoDB = mongoose.connection;
 mongoDB.once('open', () =>{

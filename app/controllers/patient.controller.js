@@ -4,6 +4,9 @@ let Vital = require('mongoose').model('Vital');
 let passport = require('passport');
 let User = require('mongoose').model('User');
 
+// for handling mongodb error message
+let CustomError = require('./error.controller');
+
 exports.readPatients = (req, res, next) => {
     Patient.find({}, (err, patients)=> {
         if(err){
@@ -13,21 +16,6 @@ exports.readPatients = (req, res, next) => {
             res.json(patients);
         }
     });
-};
-
-const getMongoDBErrorMessage = (error) => {
-    if (!error.code) {
-        console.log("Can't find MongoDB error message");
-        return "Internal Server Error" + error;
-    }
-
-    switch(error.code) {
-        case 11000:
-        case 11001:
-            return "Please use other one";
-        default:
-            return "Internal Server Error: " + error.code;
-    }
 };
 
 exports.signin = function (req, res, next) {
@@ -59,7 +47,7 @@ exports.signup = function (req, res) {
     user.save((err) => {
         if (err) {
             return res.status(400).send({
-                message: getMongoDBErrorMessage(err)
+                message: CustomError.getMongoDBErrorMessage(err)
             });
         } else {
             // Remove sensitive data before login
