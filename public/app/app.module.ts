@@ -5,18 +5,20 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingComponents } from './app.routes';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 // Components
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { RouterModule, Routes } from '@angular/router';
 
 // Services
 import { DataService } from './services/data.service';
 import { LoginService } from './services/login.service';
-import { RouterModule, Routes } from '@angular/router';
-import { SignupComponent } from './components/signup/signup.component';
-import { HomeComponent } from './components/home/home.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import { ValidateService } from './services/validate.service'
 
 @NgModule({
   declarations: [
@@ -32,9 +34,14 @@ import { ProfileComponent } from './components/profile/profile.component';
     HttpModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FlashMessagesModule.forRoot()
   ],
-  providers: [DataService, LoginService],
+  providers: [
+    DataService, 
+    LoginService,
+    ValidateService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
