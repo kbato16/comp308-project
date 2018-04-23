@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, routingComponents } from './app.routes';
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { RouterModule, Routes } from '@angular/router';
 
 // Components
 import { AppComponent } from './app.component';
@@ -13,12 +14,19 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { RouterModule, Routes } from '@angular/router';
+// Components - vitals
+import { VitalsComponent } from './components/vitals/vitals.component';
+import { VitalsListComponent } from './components/vitals/list/list.component';
+import { CreateComponent } from './components/vitals/create/create.component';
+import { ViewComponent } from './components/vitals/view/view.component'
+
+
 
 // Services
 import { DataService } from './services/data.service';
 import { LoginService } from './services/login.service';
-import { ValidateService } from './services/validate.service'
+import { ValidateService } from './services/validate.service';
+import { VitalsService } from './services/vitals.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +35,11 @@ import { ValidateService } from './services/validate.service'
     NavbarComponent,
     SignupComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    VitalsComponent,
+    VitalsListComponent,
+    CreateComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +52,8 @@ import { ValidateService } from './services/validate.service'
   providers: [
     DataService, 
     LoginService,
-    ValidateService
+    ValidateService,
+    VitalsService
   ],
   bootstrap: [AppComponent]
 })

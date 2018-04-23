@@ -3,14 +3,14 @@ let crypto = require('crypto');
 
 let Schema = mongoose.Schema;
 const patientSchema = Schema({
-  vitals: {
+  vitals: [{
     type: Schema.Types.ObjectId,
     ref: 'Vital'
-  },
-  condition: {
+  }],
+  condition: [{
     type: Schema.Types.ObjectId,
     ref: 'Condition'
-  },
+  }],
   userId: {
     type: Schema.Types.ObjectId,
     ref: 'User'

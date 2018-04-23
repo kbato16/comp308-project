@@ -16,6 +16,22 @@ exports.readVitals = (req, res, next) => {
     });
 };
 
+exports.listByPatientId = (req, res) => {
+    let query = {
+        patientId: req.patient.PID
+    };
+
+    Vital.find(query, (err, vitalsList)=> {
+        if (err) {
+            return res.status(400).send({
+                message: CustomError.getMongoDBErrorMessage(err)
+            });
+        } 
+
+        res.json(vitalsList);
+    });
+};
+
 exports.read = function (req, res) {
     res.status(200).json(req.vital);
 };

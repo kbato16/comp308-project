@@ -2,7 +2,6 @@ let express = require('express');
 let router = express.Router();
 
 let indexController = require('../controllers/index.controller');
-//let userController = require('../controllers/user.controller');
 let usersController = require('../controllers/user.controller');
 let patientsController = require('../controllers/patient.controller');
 let conditionsController = require('../controllers/conditions.controller');
@@ -32,21 +31,25 @@ module.exports = router;
 //-------------------------------------------------------------------------------
 //  Vital
 
+// List
+// Precondtion: Any nurse or the patient
+router.get('/api/vitals/list/:patientId', vitalsController.listByPatientId);
+
 // Create
 // Precondtion: Any nurse or the patient
-router.post('/api/vital/create/:patientId', patientsController.createVital);
+router.post('/api/vitals/create/:patientId', patientsController.createVital);
 
 // Read the vital
 // Precondtion: Any nurse or the patient
-router.post('/api/vital/read/:vitalId', vitalsController.read);
+router.post('/api/vitals/read/:vitalId', vitalsController.read);
 
 // Update the vital
 // Precondtion: Any nurse or the patient
-router.post('/api/vital/update/:vitalId', vitalsController.update);
+router.post('/api/vitals/update/:vitalId', vitalsController.update);
 
 // Delete the vital
 // Precondtion: Any nurse or the patient
-router.post('/api/vital/delete/:vitalId', vitalsController.delete);
+router.post('/api/vitals/delete/:vitalId', vitalsController.delete);
 
 router.param('patientId', patientsController.patientByID);
 router.param('vitalId', vitalsController.vitalByID);
