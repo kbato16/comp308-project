@@ -58,6 +58,10 @@ app.use(express.static(path.join(__dirname, '../dist')));
 app.use('/lib', express.static(path.resolve('./node_modules')));
 app.use('/', index);
 
+app.all('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../dist/index.html'));
+})
+
 app.use((req, res, next) => {
     let err = new Error('Not Found');
     err.status = 404;
