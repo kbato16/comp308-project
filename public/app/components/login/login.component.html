@@ -1,11 +1,11 @@
-<div class=".form" >
+<form class=".form" (ngSubmit)="signIn()">
 
   <div class="card card-container">
     <h3 class="card-header text-dark text-center">Login</h3>
     <br>
     <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
     <p id="profile-name" class="profile-name-card"></p>
-    <form class="form-signin" (ngSubmit)="signIn()">
+    <form class="form-signin">
       <span id="reauth-email" class="reauth-email"></span>
       <input type="text" name="studentNumber" [(ngModel)]="credentials.username" class="form-control" placeholder="Email address"
         required autofocus>
@@ -17,4 +17,4 @@
   </div>
 
   <span>{{errorMessage}}</span>
-</div>
+</form>
