@@ -10,6 +10,7 @@ import { VitalsListComponent } from './components/vitals/list/list.component';
 import { AppComponent } from './app.component';
 
 const AppRoutes: Routes = [
+    { path: '', component: HomeComponent }, 
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'profile', component: ProfileComponent },
