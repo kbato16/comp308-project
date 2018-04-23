@@ -5,13 +5,23 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { VitalsComponent } from './components/vitals/vitals.component';
+import { VitalsListComponent } from './components/vitals/list/list.component';
 import { AppComponent } from './app.component';
 
 const AppRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'profile', component: ProfileComponent },
-    { path: '', component: HomeComponent }
+    { 
+        path: 'vitals/:patientId', 
+        component: VitalsComponent,
+        children: [
+            {path: 'list', component: VitalsListComponent}, 
+        ]
+    },
+    { path: '**', component: HomeComponent }, 
+
 ];
 
 @NgModule({
