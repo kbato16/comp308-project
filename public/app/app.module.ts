@@ -14,19 +14,20 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { LoginComponent} from './components/login/login.component';
+
 // Components - vitals
 import { VitalsComponent } from './components/vitals/vitals.component';
 import { VitalsListComponent } from './components/vitals/list/list.component';
 import { CreateComponent } from './components/vitals/create/create.component';
 import { ViewComponent } from './components/vitals/view/view.component'
 
-
-
 // Services
 import { DataService } from './services/data.service';
 import { LoginService } from './services/login.service';
 import { ValidateService } from './services/validate.service';
 import { VitalsService } from './services/vitals.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { VitalsService } from './services/vitals.service';
     routingComponents,
     NavbarComponent,
     SignupComponent,
+    LoginComponent,
     HomeComponent,
     ProfileComponent,
     VitalsComponent,
@@ -52,6 +54,7 @@ import { VitalsService } from './services/vitals.service';
   providers: [
     DataService, 
     LoginService,
+    AuthService,
     ValidateService,
     VitalsService
   ],
