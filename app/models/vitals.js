@@ -5,7 +5,11 @@ const vitalSchema = Schema({
     type: Schema.Types.ObjectId,
     ref: 'Patient'
   },
-  Date: String,
+  Date: {
+    type: Date,
+    // Create a default 'created' value
+    default: Date.now
+  },
   HeartRate: String,
   Temperature: String,
   Weight: String,

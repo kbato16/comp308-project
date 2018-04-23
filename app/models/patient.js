@@ -5,7 +5,7 @@ let Schema = mongoose.Schema;
 const patientSchema = Schema({
   vitals: [{
     type: Schema.Types.ObjectId,
-    ref: 'Vitals'
+    ref: 'Vital'
   }],
   conditions: [{
     type: Schema.Types.ObjectId,

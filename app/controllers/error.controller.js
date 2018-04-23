@@ -1,4 +1,4 @@
-const getMongoDBErrorMessage = (error) => {
+exports.getMongoDBErrorMessage = (error) => {
     if (!error.code) {
         console.log("Can't find MongoDB error message");
         return "Internal Server Error" + error;
