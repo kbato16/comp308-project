@@ -11,14 +11,14 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 export class LoginComponent {
   errorMessage: string;
   credentials: any  = {};
+  username: String;
+  password: String;
+
   constructor(
     private loginService: LoginService, 
     private flashMessage: FlashMessagesService,
     private router: Router
   ) { }
-
-  username: String;
-  password: String;
 
   signIn(){
     this.loginService.signin(this.credentials).subscribe(result=>
@@ -27,6 +27,7 @@ export class LoginComponent {
   }
 
   onLoginSubmit(){
+    console.log("Hello World!!!");
     const user = {
       username: this.username,
       password: this.password
