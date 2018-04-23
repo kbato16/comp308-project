@@ -7,6 +7,7 @@ import { Http, Headers, Request, RequestMethod, Response } from '@angular/http';
 export class VitalsService {
 
   private _baseURL = 'api/vitals';
+  vitals : any;
 
   constructor(private _http: Http) { }
 
@@ -16,6 +17,16 @@ export class VitalsService {
       .get(`${this._baseURL}/list/${patientId}`)
       .map((res: Response) => res.json())
       .catch(this.handleError);
+  }
+
+  ///api/vitals/create/:patientId
+  create(patientId:string, vitals): Observable<any> {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    // Sends data to our backend node server
+    return this._http.post('api/signup', vitals, {headers: headers})
+    .map(res => res.json());
   }
 
   private handleError(error: Response | any) {

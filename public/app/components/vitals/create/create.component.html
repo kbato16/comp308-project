@@ -1,3 +1,202 @@
-<p>
-  create works!
-</p>
+<div class="container">
+  <div class="text-center">
+    <h2>Register vitals information</h2>
+    <p class="lead">
+      Let' write somthing cool :D
+    </p>
+  </div>
+  <div class="col-md-8 mb-3">
+    <!-- <% for(var i in messages) { %>
+          <div class="flash mb-3 alert alert-danger">
+              <%= messages[i] %>
+          </div>
+          <% } %> -->
+    <form (ngSubmit)="create()">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="BodyHeight">BodyHeight</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.BodyHeight" name="BodyHeight" placeholder="BodyHeight">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="BodyWeight">BodyWeight</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.BodyWeight" name="BodyWeight" placeholder="BodyWeight">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="BodyMassIndex">BodyMassIndex</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.BodyMassIndex" name="BodyMassIndex" placeholder="BodyMassIndex">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="SystolicBloodPressure">SystolicBloodPressure</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.SystolicBloodPressure" name="SystolicBloodPressure" placeholder="SystolicBloodPressure">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="DiastolicBloodPressure">DiastolicBloodPressure</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.DiastolicBloodPressure" name="DiastolicBloodPressure" placeholder="DiastolicBloodPressure">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="OralTemperature">OralTemperature</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.OralTemperature" name="OralTemperature" placeholder="OralTemperature">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="QualityAdjustedLifeYear">QualityAdjustedLifeYear</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.QualityAdjustedLifeYear" name="QualityAdjustedLifeYear" placeholder="QualityAdjustedLifeYear">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="DisabilityRatingScale">DisabilityRatingScale</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.DisabilityRatingScale" name="DisabilityRatingScale" placeholder="DisabilityRatingScale">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="NonSmallCellLungCancer">NonSmallCellLungCancer</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.NonSmallCellLungCancer" name="NonSmallCellLungCancer" placeholder="NonSmallCellLungCancer">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="HemoglobinA1c">HemoglobinA1c</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.HemoglobinA1c" name="HemoglobinA1c" placeholder="HemoglobinA1c">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="Glucose">Glucose</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.Glucose" name="Glucose" placeholder="Glucose">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="UreaNitrogen">UreaNitrogen</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.UreaNitrogen" name="UreaNitrogen" placeholder="UreaNitrogen">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="Creatinine">Creatinine</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.Creatinine" name="Creatinine" placeholder="Creatinine">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="Calcium">Calcium</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.Calcium" name="Calcium" placeholder="Calcium">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="Sodium">Sodium</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.Sodium" name="Sodium" placeholder="Sodium">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="Potassium">Potassium</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.Potassium" name="Potassium" placeholder="Potassium">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="Chloride">Chloride</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.Chloride" name="Chloride" placeholder="Chloride">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="CarbonDioxide">CarbonDioxide</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.CarbonDioxide" name="CarbonDioxide" placeholder="CarbonDioxide">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="TotalCholesterol">TotalCholesterol</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.TotalCholesterol" name="TotalCholesterol" placeholder="TotalCholesterol">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="Triglycerides">Triglycerides</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.Triglycerides" name="Triglycerides" placeholder="Triglycerides">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="LowDensityLipoproteinCholesterol">LowDensityLipoproteinCholesterol</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.LowDensityLipoproteinCholesterol" name="LowDensityLipoproteinCholesterol" placeholder="LowDensityLipoproteinCholesterol">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="HighDensityLipoproteinCholesterol">HighDensityLipoproteinCholesterol</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.HighDensityLipoproteinCholesterol" name="HighDensityLipoproteinCholesterol" placeholder="HighDensityLipoproteinCholesterol">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="MicroalbuminCreatinineRatio">MicroalbuminCreatinineRatio</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.MicroalbuminCreatinineRatio" name="MicroalbuminCreatinineRatio" placeholder="MicroalbuminCreatinineRatio">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="EstimatedGlomerularFiltrationRate">EstimatedGlomerularFiltrationRate</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.EstimatedGlomerularFiltrationRate" name="EstimatedGlomerularFiltrationRate" placeholder="EstimatedGlomerularFiltrationRate">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="DXABonedensity">DXABonedensity</label>
+          <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="vitals.DXABonedensity" name="DXABonedensity" placeholder="DXABonedensity">
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="Date">Date</label>
+          <div class="input-group">
+            <input type="date" class="form-control" [(ngModel)]="vitals.Date" name="Date" placeholder="Date">
+          </div>
+        </div>
+      </div>
+
+      <hr class="mb-4">
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
+    </form>
+  </div>
+</div>
