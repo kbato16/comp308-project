@@ -5,7 +5,6 @@ const vitalSchema = Schema({
     type: Schema.Types.ObjectId,
     ref: 'Patient'
   },
-  Date: String,
   BodyHeight : String,
   BodyWeight : String,
   BodyMassIndex : String,
@@ -30,7 +29,7 @@ const vitalSchema = Schema({
   HighDensityLipoproteinCholesterol :String,
   MicroalbuminCreatinineRatio : String,
   EstimatedGlomerularFiltrationRate : String,
-  DXABonedensity : String
+  DXABonedensity : String,
   Date: {
     type: Date,
     // Create a default 'created' value
