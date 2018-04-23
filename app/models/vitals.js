@@ -31,6 +31,11 @@ const vitalSchema = Schema({
   MicroalbuminCreatinineRatio : String,
   EstimatedGlomerularFiltrationRate : String,
   DXABonedensity : String
+  Date: {
+    type: Date,
+    // Create a default 'created' value
+    default: Date.now
+  },
 }, {
   collection: "vitals"
 });

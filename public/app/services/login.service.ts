@@ -28,4 +28,23 @@ export class LoginService {
     return Observable.throw(error.json() || 'Server Error');
   }
 
+  // Register user service
+  registerUser(user){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    // Sends data to our backend node server
+    return this.http.post('api/signup', user, {headers: headers})
+    .map(res => res.json());
+  }
+
+  // Authenticate user service
+  authenticateUser(user){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    // Sends data to our backend node server
+    return this.http.post('api/signin', user, {headers: headers})
+    .map(res => res.json());
+  }
 }

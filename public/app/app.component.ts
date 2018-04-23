@@ -9,5 +9,8 @@ import { LoginService } from './services/login.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(
+    private loginService: LoginService, 
+    private router: Router
+  ) { }
 }
