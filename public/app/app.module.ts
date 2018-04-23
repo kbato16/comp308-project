@@ -17,7 +17,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 // Components - vitals
 import { VitalsComponent } from './components/vitals/vitals.component';
 import { VitalsListComponent } from './components/vitals/list/list.component';
-import { CreateComponent } from './components/vitals/create/create.component';
+import { VitalsCreateComponent } from './components/vitals/create/create.component';
 import { ViewComponent } from './components/vitals/view/view.component'
 
 
@@ -38,7 +38,7 @@ import { VitalsService } from './services/vitals.service';
     ProfileComponent,
     VitalsComponent,
     VitalsListComponent,
-    CreateComponent,
+    VitalsCreateComponent,
     ViewComponent
   ],
   imports: [

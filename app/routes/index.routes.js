@@ -21,9 +21,6 @@ router.get('/api/patients', patientsController.readPatients);
 router.get('/api/conditions', conditionsController.readConditions);
 router.get('/api/vitals', vitalsController.readVitals);
 
-//router.post('/api/signin', patientsController.signin);
-//router.post('/api/signup', patientsController.signup);
-
 // precondition: login
 router.post('/api/alert', alertController.createAlert);
 
