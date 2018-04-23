@@ -10,11 +10,11 @@ export class VitalsCreateComponent implements OnInit {
 
   constructor(private vitalService: VitalsService) { }
 
-  create() {
-    this.vitalService.signup(this.user)
-        .subscribe(result => this._router.navigate(['/']),
-        error => this.errorMessage = error);
-}
+//   create() {
+//     this.vitalService.signup(this.user)
+//         .subscribe(result => this._router.navigate(['/']),
+//         error => this.errorMessage = error);
+// }
 
   ngOnInit() {
   }
