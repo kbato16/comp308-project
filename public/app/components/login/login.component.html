@@ -1,14 +1,14 @@
 <div class="card card-container">
-  <form class="form-signin" (ngSubmit)="onLoginSubmit()">
+  <form class="form-signin" (ngSubmit)="signIn()">
       <h3 class="card-header text-dark text-center">Login</h3>
       <br>
       <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
       <p id="profile-name" class="profile-name-card"></p>
       
       <span id="reauth-email" class="reauth-email"></span>
-      <input type="text" name="username" [(ngModel)]="username" class="form-control" placeholder="Email address"
+      <input type="text" name="username" [(ngModel)]="credentials.username" class="form-control" placeholder="Email address"
         required autofocus>
-      <input type="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Password" required>
+      <input type="password" [(ngModel)]="credentials.password" name="password" class="form-control" placeholder="Password" required>
 
       <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
   </form>

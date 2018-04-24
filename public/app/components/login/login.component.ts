@@ -27,29 +27,38 @@ export class LoginComponent implements OnInit{
 
   }
 
-/* 
-  signIn(){
-    this.loginService.signin(this.credentials).subscribe(result=>
-      this.router.navigate(['/']),
-      error =>this.errorMessage = error);
-  } */
 
-  onLoginSubmit(){
+  signIn(){
+    this.loginService.signin(this.credentials).subscribe(result=> {
+      if(!!result.success){
+        this.flashMessage.show('Something went wrong...', {cssClass: 'alert-danger', timeout: 5000});
+        this.router.navigate(['/login']);
+      } else {
+        this.flashMessage.show('Login successful', {cssClass: 'alert-success', timeout: 5000});
+        // this.authService.storeUserData(data.token, data.user);
+        this.router.navigate(['/home']);
+      }
+    });
+      // this.router.navigate(['/']),
+      // error =>this.errorMessage = error);
+  } 
+
+  /* onLoginSubmit(){
     const user = {
       username: this.username,
       password: this.password
     }
 
     this.authService.authenticateUser(user).subscribe(data => {
-      if(data.success){
-        this.authService.storeUserData(data.token, data.user);
-        this.flashMessage.show('Login successful', {cssClass: 'alert-success', timeout: 5000});
-        this.router.navigate(['/home']);
-      } else {
+      if(!!data.success){
         this.flashMessage.show('Something went wrong...', {cssClass: 'alert-danger', timeout: 5000});
         this.router.navigate(['/login']);
+      } else {
+        this.flashMessage.show('Login successful', {cssClass: 'alert-success', timeout: 5000});
+        // this.authService.storeUserData(data.token, data.user);
+        this.router.navigate(['/home']);
       }
     });
   }
-
+ */
 }
