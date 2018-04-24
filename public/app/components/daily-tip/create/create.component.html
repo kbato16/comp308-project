@@ -1,0 +1,12 @@
+<div class="col-md-8 offset-md-2">
+  <div class="card bg-light mb-3">
+    <div class="card-header">Send your patient a daily tip</div>
+    <div class="card-body">
+      <form (ngSubmit)="send()">
+        <h5 class="card-title">Daily Tip</h5>
+        <textarea class="form-control" rows="5" name="dailyTip" [(ngModel)]="dailyTip.dailyTip"></textarea>
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</div>

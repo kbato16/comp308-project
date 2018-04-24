@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VitalsService } from '../../../services/vitals.service';
-import { LoginService } from '../../../services/login.service';
+import { AuthService } from '../../../services/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 @Component({
@@ -16,7 +16,7 @@ export class VitalsCreateComponent implements OnInit {
   patientId: string;
 
   constructor(private vitalService: VitalsService,
-    private loginService: LoginService,
+    private authService: AuthService,
     private router: Router,
     private route: ActivatedRoute,
     private flashMessage: FlashMessagesService) {

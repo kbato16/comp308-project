@@ -9,9 +9,12 @@ import { VitalsComponent } from './components/vitals/vitals.component';
 import { VitalsListComponent } from './components/vitals/list/list.component';
 import { VitalsCreateComponent } from './components/vitals/create/create.component';
 import { AppComponent } from './app.component';
+import { DailyTipComponent } from './components/daily-tip/daily-tip.component';
+import { DailyTipCreateComponent } from './components/daily-tip/create/create.component';
 
 const AppRoutes: Routes = [
     { path: '', component: HomeComponent }, 
+    { path: 'home', component: HomeComponent }, 
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'profile', component: ProfileComponent },
@@ -21,6 +24,13 @@ const AppRoutes: Routes = [
         children: [
             {path: 'list', component: VitalsListComponent},
             {path: 'create', component: VitalsCreateComponent}
+        ]
+    },
+    {
+        path: 'dailyTip/:patientId',
+        component: DailyTipComponent,
+        children: [
+            {path: 'create', component: DailyTipCreateComponent}
         ]
     },
     { path: '**', component: HomeComponent }, 

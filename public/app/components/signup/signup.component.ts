@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FlashMessagesService } from 'angular2-flash-messages';
-import { LoginService } from '../../services/login.service';
 import { AuthService } from '../../services/auth.service';
 import { ValidateService } from '../../services/validate.service';
 import { Router } from '@angular/router';
@@ -25,7 +24,6 @@ export class SignupComponent implements OnInit {
 
   constructor(
     private flashMessage: FlashMessagesService,
-    private loginService: LoginService,
     private validateService: ValidateService,
     private authService: AuthService,
     private router: Router
