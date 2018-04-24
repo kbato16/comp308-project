@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit{
 
 
   signIn(){
-    this.loginService.signin(this.credentials).subscribe(result=> {
-      if(!!result.success){
+    this.loginService.signin(this.credentials).subscribe(result => {
+      if(!!result.success) {
         this.flashMessage.show('Something went wrong...', {cssClass: 'alert-danger', timeout: 5000});
         this.router.navigate(['/login']);
       } else {

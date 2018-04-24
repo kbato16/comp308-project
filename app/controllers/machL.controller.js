@@ -7,6 +7,8 @@ let ml = require('machine_learning');
 exports.diagnose = (req, res, next) => {
     let data;
     let result;
+    let vitals = req.vitals;
+
     DataSet.find({}).lean().exec((err, dataSet) => {
         data= dataSet[0]["data"];
         result= dataSet[0]["result"];
@@ -18,32 +20,7 @@ exports.diagnose = (req, res, next) => {
 
         //TODO build form to insert values
         //Field vitals
-        var classificationResult = dt.classify([
-            133.6,
-            110,
-            40,
-            134,
-            30,
-            46,
-            50,
-            1,
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            200,
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""]);
+        var classificationResult = dt.classify(vitals);
         var tree = dt.getTree();
         dt.prune(1.0);
         res.json(classificationResult);
