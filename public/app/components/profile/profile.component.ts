@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth.service';
 export class ProfileComponent implements OnInit {
 
   user: any;
+  patient: any;
   credentials: any  = {};
 
   constructor(

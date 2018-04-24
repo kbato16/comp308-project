@@ -1,14 +1,24 @@
 <div class="col-8 mx-auto">
-    <h2 class="page-header">Patient Information</h2>
+    <h2  *ngIf="!user.userType" class="page-header">Patient Information</h2>
+    <h2  *ngIf="user.userType"  class="page-header">Employee Information</h2>
     <br>
     <ul class="list-group">
         <li class="list-group-item"><b>Name:</b> {{user.firstName}} {{user.lastName}}</li>
-        <li class="list-group-item" *ngIf="user.userType"><b>isNurse:</b> {{user.userType}}</li>
+        <li class="list-group-item" *ngIf="!user.userType"><b>Patient ID:</b> {{user.patientId}}</li>
+        <li class="list-group-item" *ngIf="user.userType"><b>Nurse ID:</b> {{user.nurseId}}</li>
         <li class="list-group-item" *ngIf="!user.gender" ><b>Gender:</b> Male</li>
         <li class="list-group-item" *ngIf="user.gender" ><b>Gender:</b> Female</li>
         <li class="list-group-item"><b>DOB:</b> {{user.dob}}</li>
         <li class="list-group-item"><b>Address:</b> {{user.address}}</li>
         <li class="list-group-item"><b>Phone:</b> {{user.phone}} </li>
         <li class="list-group-item"><b>Email:</b> {{user.username}} </li>
+    </ul>
+  </div>
+
+  <div *ngIf="user.userType" class="col-8 mx-auto mt-4">
+    <h2 class="page-header">My Patients</h2>
+    <br>
+    <ul class="list-group" *ngFor="let patient of patients">
+        <li class="list-group-item"><b>Name:</b> {{patient.firstName}} {{patient.lastName}}</li>
     </ul>
   </div>

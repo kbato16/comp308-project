@@ -49,38 +49,6 @@ export class AuthService {
       .map(res => res.json());
   }
 
-  /* 
-   // Get Profile
-   getProfile() {
-     let headers = new Headers();
-     this.loadToken();
- 
-     // Authorization Header
-     headers.append('Authorization', this.authToken);
- 
-     // Application/JSON Header
-     headers.append('Content-Type', 'application/json');
- 
-     // Retrieves JSON information from server-side application (VIA NODE)
-     return this.http.get('api/profile', { headers: headers })
-       .map(res => res.json());
-   } */
-
-  /* // Store user data
-  storeUserData(token, user) {
-    localStorage.setItem('id_token', token);
-    localStorage.setItem('user', JSON.stringify(user));
-    this.authToken = token;
-    this.user = user;
-  }
-
-  // Load token - fetch from localstorage
-  loadToken() {
-    const token = localStorage.getItem('id_token');
-    this.authToken = token;
-  } 
-*/
-
   // Logout
   logout() {
     // Clears credentials
