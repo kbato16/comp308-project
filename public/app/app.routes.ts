@@ -11,6 +11,7 @@ import { VitalsCreateComponent } from './components/vitals/create/create.compone
 import { AppComponent } from './app.component';
 import { DailyTipComponent } from './components/daily-tip/daily-tip.component';
 import { DailyTipCreateComponent } from './components/daily-tip/create/create.component';
+import { DiagnoseComponent } from './components/vitals/diagnose/diagnose.component';
 
 const AppRoutes: Routes = [
     { path: '', component: HomeComponent }, 
@@ -23,7 +24,8 @@ const AppRoutes: Routes = [
         component: VitalsComponent,
         children: [
             {path: 'list', component: VitalsListComponent},
-            {path: 'create', component: VitalsCreateComponent}
+            {path: 'create', component: VitalsCreateComponent},
+            {path: 'diagnose', component: DiagnoseComponent}
         ]
     },
     {

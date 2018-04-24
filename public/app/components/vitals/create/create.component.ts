@@ -27,14 +27,6 @@ export class VitalsCreateComponent implements OnInit {
       .subscribe(result => this.router.navigate(['/vitals', this.patientId]), error => this.errorMessage = error);
   }
 
-  diagnose() {
-    this.vitalService.diagnose(this.vitals).subscribe(result => {
-      if(result.success) {
-        console.log(result);
-        this.flashMessage.show(`Diagnosis: ${result}`, {cssClass: 'alert-success', timeout: 5000});
-      }
-    });
-  }
   ngOnInit() {
     this.paramsObserver = this.route.parent.params.subscribe(params => {
       this.patientId = params['patientId'];
