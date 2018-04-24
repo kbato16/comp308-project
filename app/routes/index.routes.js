@@ -56,6 +56,7 @@ router.post('/api/vitals/delete/:vitalId', vitalsController.delete);
 // Create
 // Precondtion: Nurse
 router.post('/api/dailyTip/create/:patientId', dailyTipsController.create);
+router.get('/api/dailyTip/list/:patientId', dailyTipsController.listByPatientId);
 
 router.param('patientId', patientsController.patientByID);
 router.param('vitalId', vitalsController.vitalByID);

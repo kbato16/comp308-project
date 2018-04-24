@@ -27,7 +27,6 @@ export class DailyTipCreateComponent implements OnInit {
   }
 
   send() {
-    console.log("Send tip!:" + this.dailyTip);
     this.dailyTipService
     .create(this.patientId, this.dailyTip)
     .subscribe(

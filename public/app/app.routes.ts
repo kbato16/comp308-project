@@ -13,6 +13,7 @@ import { DailyTipComponent } from './components/daily-tip/daily-tip.component';
 import { DailyTipCreateComponent } from './components/daily-tip/create/create.component';
 import { PatientComponent } from './components/patient/patient.component';
 import { PatientListComponent } from './components/patient/list/list.component';
+import { DailyTipListComponent } from './components/daily-tip/list/list.component';
 
 const AppRoutes: Routes = [
     { path: '', component: HomeComponent }, 
@@ -32,6 +33,7 @@ const AppRoutes: Routes = [
         path: 'dailyTip/:patientId',
         component: DailyTipComponent,
         children: [
+            {path: 'list', component: DailyTipListComponent},
             {path: 'create', component: DailyTipCreateComponent}
         ]
     },

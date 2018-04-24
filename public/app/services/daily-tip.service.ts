@@ -10,6 +10,14 @@ export class DailyTipService {
 
   constructor(private _http: Http) { }
 
+  // /api/dailyTip/list/:patientId
+  listByPatientId(patientId:string): Observable<any> {
+    return this._http
+      .get(`${this._baseURL}/list/${patientId}`)
+      .map((res: Response) => res.json())
+      .catch(this.handleError);
+  }
+
   ///api/dailyTip/create/:patientId
   create(patientId:string, dailyTip: any): Observable<any> {
     return this._http
