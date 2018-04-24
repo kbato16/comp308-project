@@ -60,7 +60,7 @@ exports.signup = function (req, res) {
                     } else {
                         user.patientId = role._id;
                     }
-                    user.save((err) => {
+                    User.findByIdAndUpdate(user._id, user, (err) => {
                         if (err) {
                             return res.status(400).send({
                                 message: CustomError.getMongoDBErrorMessage(err)
