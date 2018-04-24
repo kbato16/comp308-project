@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VitalsService } from '../../../services/vitals.service';
+import { LoginService } from '../../../services/login.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -7,16 +9,26 @@ import { VitalsService } from '../../../services/vitals.service';
   styleUrls: ['./create.component.scss']
 })
 export class VitalsCreateComponent implements OnInit {
-
-  constructor(private vitalService: VitalsService) { }
-
-//   create() {
-//     this.vitalService.signup(this.user)
-//         .subscribe(result => this._router.navigate(['/']),
-//         error => this.errorMessage = error);
-// }
-
-  ngOnInit() {
+  user: any;
+  vitals: any = {};
+  errorMessage: string;
+  paramsObserver: any;
+  patientId: string;
+  constructor(private vitalService: VitalsService,
+    private loginService: LoginService,
+    private router: Router,
+    private route: ActivatedRoute) {
   }
 
+  create() {
+    this.vitalService.create(this.patientId, this.vitals)
+      .subscribe(result => this.router.navigate(['/vitals', this.patientId]),
+        error => this.errorMessage = error);
+  }
+
+  ngOnInit() {
+    this.paramsObserver = this.route.parent.params.subscribe(params => {
+      this.patientId = params['patientId'];
+    });
+  }
 }
