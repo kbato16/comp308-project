@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
+  gender: Boolean;
+  userType: Boolean;
   firstName: String;
   lastName: String;
   dob: String;
@@ -19,8 +21,8 @@ export class SignupComponent implements OnInit {
   prov: String;
   email: String;
   phone: String;
-  password: String;
   username: String;
+  password: String;
 
   constructor(
     private flashMessage: FlashMessagesService,
@@ -34,8 +36,15 @@ export class SignupComponent implements OnInit {
 
   onRegisterSubmit(){
     const user = {
+      gender: this.gender,
+      userType: this.userType,
       firstName: this.firstName,
       lastName: this.lastName,
+      dob: this.dob,
+      address: this.address,
+      city: this.city,
+      prov: this.prov,
+      phone: this.phone,
       email: this.email,
       username: this.username,
       password: this.password
@@ -45,12 +54,36 @@ export class SignupComponent implements OnInit {
 
     // Required Fields
     if(!this.validateService.validateRegister(user)){
+      if(user.gender == null){
+        err.push('GENDER')
+      } 
+
       if(!user.firstName){
         err.push('FIRST NAME')
       }
 
       if(!user.lastName){
         err.push('LAST NAME')
+      }
+
+      if(!user.dob){
+        err.push('DOB')
+      }
+
+      if(!user.address){
+        err.push('ADDRESS')
+      }
+
+      if(!user.city){
+        err.push('CITY')
+      }
+
+      if(!user.prov){
+        err.push('PROVINCE')
+      }
+      
+      if(!user.phone){
+        err.push('PHONE')
       }
 
       if(!user.email){
@@ -65,9 +98,12 @@ export class SignupComponent implements OnInit {
         err.push('PASSWORD')
       }
 
+      
+
       this.flashMessage.show('Please fill in all fields: ' + err, {cssClass: 'alert-danger', timeout: 3000});
       return false;
-    } 
+    }
+
 
     // Validate Email
     if(!this.validateService.validateEmail(user.email)){

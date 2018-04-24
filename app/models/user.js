@@ -5,6 +5,27 @@ let Schema = mongoose.Schema;
 const userSchema = Schema({
   firstName: String,
   lastName: String,
+  gender: {
+    type: Boolean,
+    default: false, // Default: MALE
+    required: true
+  },
+  dob: {
+    type: String,
+    required: true
+  },
+  address: {
+    type: String,
+    required: true
+  },
+  prov: {
+    type: String,
+    required: true
+  },
+  phone: {
+    type: String,
+    required: true
+  },
   username: {
     type: String,
     unique: true,
@@ -38,7 +59,7 @@ const userSchema = Schema({
     type: Schema.Types.ObjectId,
     ref: 'Paitent'
   },
-  nurseId: {                      // userType: ture
+  nurseId: {                      // userType: true
     type: Schema.Types.ObjectId,
     ref: 'Nurse'
   },

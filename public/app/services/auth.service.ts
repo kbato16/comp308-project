@@ -49,7 +49,7 @@ export class AuthService {
       .map(res => res.json());
   }
 
-/* 
+ /* 
   // Get Profile
   getProfile() {
     let headers = new Headers();
@@ -64,9 +64,9 @@ export class AuthService {
     // Retrieves JSON information from server-side application (VIA NODE)
     return this.http.get('api/profile', { headers: headers })
       .map(res => res.json());
-  }
+  } */
 
-  // Store user data
+  /* // Store user data
   storeUserData(token, user) {
     localStorage.setItem('id_token', token);
     localStorage.setItem('user', JSON.stringify(user));
@@ -80,12 +80,12 @@ export class AuthService {
     this.authToken = token;
   } 
 */
-  
+
   // Logout
   logout() {
     // Clears credentials
     // this.authToken = null;
     this.user = null;
     localStorage.clear();
-  }
+  } 
 }

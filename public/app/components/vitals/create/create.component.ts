@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { VitalsService } from '../../../services/vitals.service';
-import { LoginService } from '../../../services/login.service';
+import { AuthService } from '../../../services/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ export class VitalsCreateComponent implements OnInit {
   paramsObserver: any;
   patientId: string;
   constructor(private vitalService: VitalsService,
-    private loginService: LoginService,
+    private authService: AuthService,
     private router: Router,
     private route: ActivatedRoute) {
   }

@@ -2,10 +2,13 @@
     <h2 class="page-header">Patient Information</h2>
     <br>
     <ul class="list-group">
-        <li class="list-group-item">Name: {{user.firstName}} {{user.lastName}}</li>
-        <li class="list-group-item">DOB: {{user.dob}}</li>
-        <li class="list-group-item">Address: {{user.address}}</li>
-        <li class="list-group-item">Phone: {{user.phone}} </li>
-        <li class="list-group-item">Email: {{user.username}} </li>
+        <li class="list-group-item"><b>Name:</b> {{user.firstName}} {{user.lastName}}</li>
+        <li class="list-group-item" *ngIf="user.userType"><b>isNurse:</b> {{user.userType}}</li>
+        <li class="list-group-item" *ngIf="!user.gender" ><b>Gender:</b> Male</li>
+        <li class="list-group-item" *ngIf="user.gender" ><b>Gender:</b> Female</li>
+        <li class="list-group-item"><b>DOB:</b> {{user.dob}}</li>
+        <li class="list-group-item"><b>Address:</b> {{user.address}}</li>
+        <li class="list-group-item"><b>Phone:</b> {{user.phone}} </li>
+        <li class="list-group-item"><b>Email:</b> {{user.username}} </li>
     </ul>
   </div>
