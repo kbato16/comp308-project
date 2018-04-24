@@ -13,7 +13,7 @@ router.get('/api', indexController.index);
 
 // machinelearning call
 //TODO Will update as POST Method
-router.get('/api/diagnose', machLController.diagnose); 
+router.post('/api/diagnose', machLController.diagnose); 
 router.post('/api/signin', usersController.signin);
 router.post('/api/signup', usersController.signup);
 
