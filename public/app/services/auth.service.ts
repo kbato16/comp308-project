@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Observable';
 export class AuthService {
   public user = window['user'];
   private signinUrl = 'api/signin';
-  private _signupURL = 'api/auth/signup';
+  private _signupURL = 'api/signup';
 
   constructor(private http: Http) { }
   isLoggedIn(): boolean {

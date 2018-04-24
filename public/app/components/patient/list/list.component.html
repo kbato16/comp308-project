@@ -25,8 +25,8 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let patient of patients">
-                        <td>{{patient.userId.firstName}}</td>
-                        <td>{{patient.userId.lastName}}</td>
+                        <td>{{patient.firstName}}</td>
+                        <td>{{patient.lastName}}</td>
                         <td><button class="btn btn-primary" (click)="add(patient._id)">Add</button></td>
                         <td><button class="btn btn-success" (click)="send(patient._id)">Send Tips</button></td>
                         <td><button class="btn btn-info" (click)="enterVitals(patient._id)">Enter Vitals</button></td>
