@@ -21,6 +21,7 @@
                         <th>Last Name</th>
                         <th>Add as my patient</th>
                         <th>Send Tip</th>
+                        <th>Enter Vitals</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,6 +30,7 @@
                         <td>{{patient.userId.lastName}}</td>
                         <td class="btn btn-primary" (click)="add(patient._id)">Add</td>
                         <td class="btn btn-success" (click)="send(patient._id)">Send Tips</td>
+                        <td class="btn btn-success" (click)="enterVitals(patient._id)">Enter Vitals</td>
                     </tr>
                 </tbody>
             </table>

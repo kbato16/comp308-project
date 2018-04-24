@@ -13,7 +13,7 @@ export class AuthService {
   isLoggedIn(): boolean {
     return (!!this.user);
   }
-  
+
   signin(credentials: any): Observable<any> {
     const body = JSON.stringify(credentials);
     const headers = new Headers({
@@ -49,22 +49,22 @@ export class AuthService {
       .map(res => res.json());
   }
 
- /* 
-  // Get Profile
-  getProfile() {
-    let headers = new Headers();
-    this.loadToken();
-
-    // Authorization Header
-    headers.append('Authorization', this.authToken);
-
-    // Application/JSON Header
-    headers.append('Content-Type', 'application/json');
-
-    // Retrieves JSON information from server-side application (VIA NODE)
-    return this.http.get('api/profile', { headers: headers })
-      .map(res => res.json());
-  } */
+  /* 
+   // Get Profile
+   getProfile() {
+     let headers = new Headers();
+     this.loadToken();
+ 
+     // Authorization Header
+     headers.append('Authorization', this.authToken);
+ 
+     // Application/JSON Header
+     headers.append('Content-Type', 'application/json');
+ 
+     // Retrieves JSON information from server-side application (VIA NODE)
+     return this.http.get('api/profile', { headers: headers })
+       .map(res => res.json());
+   } */
 
   /* // Store user data
   storeUserData(token, user) {
@@ -87,5 +87,12 @@ export class AuthService {
     // this.authToken = null;
     this.user = null;
     localStorage.clear();
-  } 
+  }
+
+  listPatients(): Observable<any> {
+    return this.http
+      .get('api/patients')
+      .map((res: Response) => res.json())
+      .catch(this.handleError);
+  }
 }
