@@ -1,0 +1,32 @@
+<div class="text-center">
+    <p class="lead">
+       All dailytip list
+    </p>
+
+    <div class="col-md-10 offset-md-1">
+        <!-- <div *ngIf="!user || errorMessage" class="mb-3 alert alert-danger">
+            <div *ngIf="errorMessage">
+                <strong>Error!</strong> {{errorMessage}}
+            </div>
+            <div *ngIf="!user">
+                Please log in first.
+            </div>
+        </div> -->
+        <div *ngIf="(dailyTips && dailyTips.length > 0) && (user && !user.userType)" class="table-responsive">
+            <table class="table table-sm">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Date</th>
+                        <th>Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let dailyTip of dailyTips">
+                        <td>{{dailyTip.created}}</td>
+                        <td>{{dailyTip.dailyTip}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 <h1>DailyTip</h1>
 <p>
-  <a [routerLink]="['list']">List</a> |
+  <a *ngIf="user && !user.userType" [routerLink]="['list']">List</a> |
   <a *ngIf="user && user.userType" [routerLink]="['create']">Create</a>
 </p>
 

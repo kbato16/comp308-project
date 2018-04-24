@@ -14,6 +14,7 @@ import { DailyTipCreateComponent } from './components/daily-tip/create/create.co
 import { PatientComponent } from './components/patient/patient.component';
 import { PatientListComponent } from './components/patient/list/list.component';
 import { DiagnoseComponent } from './components/vitals/diagnose/diagnose.component';
+import { DailyTipListComponent } from './components/daily-tip/list/list.component';
 
 const AppRoutes: Routes = [
     { path: '', component: HomeComponent }, 
@@ -34,6 +35,7 @@ const AppRoutes: Routes = [
         path: 'dailyTip/:patientId',
         component: DailyTipComponent,
         children: [
+            {path: 'list', component: DailyTipListComponent},
             {path: 'create', component: DailyTipCreateComponent}
         ]
     },
