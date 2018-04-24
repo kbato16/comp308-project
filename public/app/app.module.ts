@@ -34,6 +34,7 @@ import { ValidateService } from './services/validate.service';
 import { VitalsService } from './services/vitals.service';
 import { DailyTipService } from './services/daily-tip.service';
 import { AuthService } from './services/auth.service';
+import { PatientAlertsComponent } from './components/patient/alerts/alerts.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { AuthService } from './services/auth.service';
     PatientComponent,
     PatientListComponent,
     DiagnoseComponent,
-    DailyTipListComponent
+    DailyTipListComponent,
+    PatientAlertsComponent
   ],
   imports: [
     BrowserModule,

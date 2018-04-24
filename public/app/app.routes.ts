@@ -15,6 +15,7 @@ import { PatientComponent } from './components/patient/patient.component';
 import { PatientListComponent } from './components/patient/list/list.component';
 import { DiagnoseComponent } from './components/vitals/diagnose/diagnose.component';
 import { DailyTipListComponent } from './components/daily-tip/list/list.component';
+import { PatientAlertsComponent } from './components/patient/alerts/alerts.component';
 
 const AppRoutes: Routes = [
     { path: '', component: HomeComponent }, 
@@ -43,7 +44,8 @@ const AppRoutes: Routes = [
         path: 'patient',
         component: PatientComponent,
         children: [
-            {path: 'list', component: PatientListComponent}
+            {path: 'list', component: PatientListComponent},
+            {path: 'alerts', component: PatientAlertsComponent},
         ]
     },
     { path: '**', component: HomeComponent }, 
