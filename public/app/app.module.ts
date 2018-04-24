@@ -21,12 +21,18 @@ import { VitalsComponent } from './components/vitals/vitals.component';
 import { VitalsListComponent } from './components/vitals/list/list.component';
 import { VitalsCreateComponent } from './components/vitals/create/create.component';
 import { ViewComponent } from './components/vitals/view/view.component'
+import { DailyTipComponent } from './components/daily-tip/daily-tip.component';
+import { DailyTipCreateComponent } from './components/daily-tip/create/create.component';
+import { PatientComponent } from './components/patient/patient.component';
+import { PatientListComponent } from './components/patient/list/list.component';
 
 // Services
 import { DataService } from './services/data.service';
 import { ValidateService } from './services/validate.service';
 import { VitalsService } from './services/vitals.service';
+import { DailyTipService } from './services/daily-tip.service';
 import { AuthService } from './services/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +46,11 @@ import { AuthService } from './services/auth.service';
     VitalsComponent,
     VitalsListComponent,
     VitalsCreateComponent,
-    ViewComponent
+    ViewComponent,
+    DailyTipComponent,
+    DailyTipCreateComponent,
+    PatientComponent,
+    PatientListComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +64,7 @@ import { AuthService } from './services/auth.service';
     DataService, 
     ValidateService,
     VitalsService,
+    DailyTipService,
     AuthService
   ],
   bootstrap: [AppComponent]

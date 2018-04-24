@@ -1,0 +1,37 @@
+<div class="text-center">
+    <h2>Patient List</h2>
+    <p class="lead">
+       All patient list
+    </p>
+
+    <div class="col-md-10 offset-md-1">
+        <!-- <div *ngIf="!user || errorMessage" class="mb-3 alert alert-danger">
+            <div *ngIf="errorMessage">
+                <strong>Error!</strong> {{errorMessage}}
+            </div>
+            <div *ngIf="!user">
+                Please log in first.
+            </div>
+        </div> -->
+        <div *ngIf="patients" class="table-responsive">
+            <table class="table table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Add as my patient</th>
+                        <th>Send Tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let patient of patients">
+                        <td>{{patient.userId.firstName}}</td>
+                        <td>{{patient.userId.lastName}}</td>
+                        <td class="btn btn-primary" (click)="add(patient._id)">Add</td>
+                        <td class="btn btn-success" (click)="send(patient._id)">Send Tips</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
