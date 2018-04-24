@@ -24,7 +24,6 @@ import { ViewComponent } from './components/vitals/view/view.component'
 
 // Services
 import { DataService } from './services/data.service';
-import { LoginService } from './services/login.service';
 import { ValidateService } from './services/validate.service';
 import { VitalsService } from './services/vitals.service';
 import { AuthService } from './services/auth.service';
@@ -53,7 +52,6 @@ import { AuthService } from './services/auth.service';
   ],
   providers: [
     DataService, 
-    LoginService,
     ValidateService,
     VitalsService,
     AuthService

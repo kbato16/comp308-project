@@ -13,22 +13,22 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="user" class="nav-item">
           <a class="nav-link" routerLink="vitals/5addeaf8d951e032b0c5d0a7">Vitals(Test)</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
+        <li *ngIf="!user" class="nav-item">
           <a class="nav-link" routerLink="signup">Sign up</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="user" class="nav-item">
           <a class="nav-link" routerLink="profile" >Profile</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="!user"class="nav-item">
           <a class="nav-link" routerLink="login" >Login</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="" >Logout</a>
+        <li *ngIf="user" class="nav-item">
+          <a class="nav-link" routerLink="" (click)="onLogoutClick()" >Logout</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0" hidden>

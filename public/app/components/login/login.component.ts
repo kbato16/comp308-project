@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../services/login.service';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
@@ -17,7 +16,6 @@ export class LoginComponent implements OnInit{
   password: String;
 
   constructor(
-    private loginService: LoginService, 
     private flashMessage: FlashMessagesService,
     private authService: AuthService,
     private router: Router
@@ -29,7 +27,7 @@ export class LoginComponent implements OnInit{
 
 
   signIn(){
-    this.loginService.signin(this.credentials).subscribe(result=> {
+    this.authService.signin(this.credentials).subscribe(result=> {
       if(!!result.success){
         this.flashMessage.show('Something went wrong...', {cssClass: 'alert-danger', timeout: 5000});
         this.router.navigate(['/login']);
