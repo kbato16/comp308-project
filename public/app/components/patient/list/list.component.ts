@@ -27,8 +27,11 @@ export class PatientListComponent implements OnInit {
   }
 
   send(patientID:any) {
-    // go to send page?
-    this.router.navigate(['dailyTip', patientID]);
+    this.router.navigate(['dailyTip', patientID, 'create']);
+  }
+
+  enterVitals(patientID:any) {
+    this.router.navigate(['vitals', patientID, 'create']);
   }
 
   ngOnInit() {
