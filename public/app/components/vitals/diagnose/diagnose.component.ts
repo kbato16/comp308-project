@@ -21,31 +21,7 @@ export class DiagnoseComponent implements OnInit {
   ngOnInit() {
     this.paramsObserver = this.route.parent.params.subscribe(params => {
       this.patientId = params['patientId'];
-      this.vitals.BodyHeight = '';
-      this.vitals.BodyWeight = '';
-      this.vitals.BodyMassIndex = '';
-      this.vitals.SystolicBloodPressure = '';
-      this.vitals.DiastolicBloodPressure = '';
-      this.vitals.OralTemperature = '';
-      this.vitals.QualityAdjustedLifeYear = '';
-      this.vitals.DisabilityRatingScale = '';
-      this.vitals.NonSmallCellLungCancer = '';
-      this.vitals.HemoglobinA1c = '';
-      this.vitals.Glucose = '';
-      this.vitals.UreaNitrogen = '';
-      this.vitals.Creatinine = '';
-      this.vitals.Calcium = '';
-      this.vitals.Sodium = '';
-      this.vitals.Potassium = '';
-      this.vitals.Chloride = '';
-      this.vitals.CarbonDioxide = '';
-      this.vitals.TotalCholesterol = '';
-      this.vitals.Triglycerides = '';
-      this.vitals.LowDensityLipoproteinCholesterol = '';
-      this.vitals.HighDensityLipoproteinCholesterol = '';
-      this.vitals.MicroalbuminCreatinineRatio = '';
-      this.vitals.EstimatedGlomerularFiltrationRate = '';
-      this.vitals.DXABonedensity = '';
+
     });
   }
   resetDiagnosis() {
