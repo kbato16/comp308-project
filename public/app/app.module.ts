@@ -20,11 +20,12 @@ import { LoginComponent } from './components/login/login.component';
 import { VitalsComponent } from './components/vitals/vitals.component';
 import { VitalsListComponent } from './components/vitals/list/list.component';
 import { VitalsCreateComponent } from './components/vitals/create/create.component';
-import { ViewComponent } from './components/vitals/view/view.component'
+import { ViewComponent } from './components/vitals/view/view.component';
 import { DailyTipComponent } from './components/daily-tip/daily-tip.component';
 import { DailyTipCreateComponent } from './components/daily-tip/create/create.component';
 import { PatientComponent } from './components/patient/patient.component';
 import { PatientListComponent } from './components/patient/list/list.component';
+import { DiagnoseComponent } from './components/vitals/diagnose/diagnose.component';
 
 // Services
 import { DataService } from './services/data.service';
@@ -50,7 +51,8 @@ import { AuthService } from './services/auth.service';
     DailyTipComponent,
     DailyTipCreateComponent,
     PatientComponent,
-    PatientListComponent
+    PatientListComponent,
+    DiagnoseComponent
   ],
   imports: [
     BrowserModule,
