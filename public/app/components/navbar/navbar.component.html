@@ -14,13 +14,13 @@
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li *ngIf="user" class="nav-item">
-          <a class="nav-link" routerLink="vitals/5addeaf8d951e032b0c5d0a7">Vitals(Test)</a>
+        <li *ngIf="user && !user.userType" class="nav-item">
+          <a class="nav-link" routerLink="vitals/{{user.patientId}}">Vitals</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="dailyTip/5addeaf8d951e032b0c5d0a7">DailyTip(Test)</a>
+        <li *ngIf="user && !user.userType" class="nav-item">
+          <a class="nav-link" routerLink="dailyTip/{{user.patientId}}">DailyTip</a>
         </li>
-        <li class="nav-item">
+        <li *ngIf="user && user.userType" class="nav-item">
             <a class="nav-link" routerLink="patient">Patients</a>
           </li>
       </ul>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-daily-tip',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DailyTipComponent implements OnInit {
 
-  constructor() { }
+  user: any;
+
+  constructor(private authService: AuthService) { 
+    this.user = authService.user;
+  }
 
   ngOnInit() {
   }

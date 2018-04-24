@@ -13,7 +13,7 @@
                 Please log in first.
             </div>
         </div> -->
-        <div *ngIf="patients" class="table-responsive">
+        <div *ngIf="patients && (user && user.userType)" class="table-responsive">
             <table class="table table-striped table-sm">
                 <thead>
                     <tr>
