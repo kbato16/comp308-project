@@ -1,22 +1,18 @@
 <div class="container">
     <div class="text-center">
-      <h2>Vitals Form</h2>
       <h4 class="lead" *ngIf="diagnosis">
-        You probably have {{ diagnosis }}
+        You probably have {{ diagnosis =='undefined'? 'no condition' : diagnosis}}
+        <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-lg" (click)="resetDiagnosis()">Reset</button>
       </h4>
     </div>
-    <div *ngIf="!diagnosis" class="col-md-8 mb-3">
-      <!-- <% for(var i in messages) { %>
-            <div class="flash mb-3 alert alert-danger">
-                <%= messages[i] %>
-            </div>
-            <% } %> -->
+    <div *ngIf="!diagnosis" class="col-md-8 mb-3 mx-auto">
       <form (ngSubmit)="diagnose()">
         <div class="row">
-          <div class="col-md-4 mb-3">
+          <div class="col">
             <label for="BodyHeight">BodyHeight</label>
             <div class="input-group">
-              <input type="text" class="form-control" [(ngModel)]="vitals.BodyHeight" name="BodyHeight" placeholder="BodyHeight">
+              <input type="text" class="form-control" [(ngModel)]="vitals.BodyHeight" ngInit="vitals.BodyHeight" name="BodyHeight" placeholder="BodyHeight">
             </div>
           </div>
           <div class="col-md-4 mb-3">
@@ -140,7 +136,7 @@
   
         <div class="row">
           <div class="col-md-4 mb-3">
-            <label for="TotalCholesterol">TotalCholesterol</label>
+            <label for="TotalCholesterol">Total Cholesterol</label>
             <div class="input-group">
               <input type="text" class="form-control" [(ngModel)]="vitals.TotalCholesterol" name="TotalCholesterol" placeholder="TotalCholesterol">
             </div>
@@ -161,19 +157,19 @@
   
         <div class="row">
           <div class="col-md-4 mb-3">
-            <label for="HighDensityLipoproteinCholesterol">HighDensityLipoproteinCholesterol</label>
+            <label for="HighDensityLipoproteinCholesterol">High Density Lipoprotein Cholesterol</label>
             <div class="input-group">
               <input type="text" class="form-control" [(ngModel)]="vitals.HighDensityLipoproteinCholesterol" name="HighDensityLipoproteinCholesterol" placeholder="HighDensityLipoproteinCholesterol">
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <label for="MicroalbuminCreatinineRatio">MicroalbuminCreatinineRatio</label>
+            <label for="MicroalbuminCreatinineRatio">Microalbumin Creatinine Ratio</label>
             <div class="input-group">
               <input type="text" class="form-control" [(ngModel)]="vitals.MicroalbuminCreatinineRatio" name="MicroalbuminCreatinineRatio" placeholder="MicroalbuminCreatinineRatio">
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <label for="EstimatedGlomerularFiltrationRate">EstimatedGlomerularFiltrationRate</label>
+            <label for="EstimatedGlomerularFiltrationRate">Estimated Glomerular Filtration Rate</label>
             <div class="input-group">
               <input type="text" class="form-control" [(ngModel)]="vitals.EstimatedGlomerularFiltrationRate" name="EstimatedGlomerularFiltrationRate" placeholder="EstimatedGlomerularFiltrationRate">
             </div>
@@ -196,7 +192,7 @@
         </div>
   
         <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Diagnose</button>
+        <button class="btn btn-primary btn-lg btn-lg" type="submit">Diagnose</button>
       </form>
     </div>
-  </div>
+</div>

@@ -27,13 +27,10 @@ exports.diagnose = (req, res, next) => {
                 }
             }
         }
-        console.log(results);
-        //TODO build form to insert values
         //Field vitals
         var classificationResult = dt.classify(results);
         var tree = dt.getTree();
         dt.prune(1.0);
-        console.log(classificationResult);
         res.json(classificationResult);
     });
 };
