@@ -7,7 +7,7 @@ let CustomError = require('./error.controller');
 exports.create = (req, res) => {
     let patient = req.patient;
     let dailyTip = new DailyTip(req.body);
-    dailyTip.patientId = patient.patientId;
+    dailyTip.patientId = patient._id;
 
     dailyTip.save((err) => {
         if (err) {

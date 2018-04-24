@@ -23,7 +23,8 @@ import { VitalsCreateComponent } from './components/vitals/create/create.compone
 import { ViewComponent } from './components/vitals/view/view.component'
 import { DailyTipComponent } from './components/daily-tip/daily-tip.component';
 import { DailyTipCreateComponent } from './components/daily-tip/create/create.component';
-
+import { PatientComponent } from './components/patient/patient.component';
+import { PatientListComponent } from './components/patient/list/list.component';
 
 // Services
 import { DataService } from './services/data.service';
@@ -31,6 +32,7 @@ import { ValidateService } from './services/validate.service';
 import { VitalsService } from './services/vitals.service';
 import { DailyTipService } from './services/daily-tip.service';
 import { AuthService } from './services/auth.service';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { AuthService } from './services/auth.service';
     VitalsCreateComponent,
     ViewComponent,
     DailyTipComponent,
-    DailyTipCreateComponent
+    DailyTipCreateComponent,
+    PatientComponent,
+    PatientListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container mx-auto">
-    <a class="navbar-brand" routerLink=""><img style="max-width:30px; margin-top: -7px;" src="../../assets/logo.png"> MediCare</a>
+    <a class="navbar-brand" routerLink="">
+      <img style="max-width:30px; margin-top: -7px;" src="../../assets/logo.png"> MediCare</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -17,7 +18,10 @@
           <a class="nav-link" routerLink="vitals/5addeaf8d951e032b0c5d0a7">Vitals(Test)</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLink="dailyTip/5addeaf8d951e032b0c5d0a7">DailyTip(Test)</a>
+          <a class="nav-link" routerLink="dailyTip/5addeaf8d951e032b0c5d0a7">DailyTip(Test)</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="patient">Patients</a>
           </li>
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -25,13 +29,13 @@
           <a class="nav-link" routerLink="signup">Sign up</a>
         </li>
         <li *ngIf="user" class="nav-item">
-          <a class="nav-link" routerLink="profile" >Profile</a>
+          <a class="nav-link" routerLink="profile">Profile</a>
         </li>
-        <li *ngIf="!user"class="nav-item">
-          <a class="nav-link" routerLink="login" >Login</a>
+        <li *ngIf="!user" class="nav-item">
+          <a class="nav-link" routerLink="login">Login</a>
         </li>
         <li *ngIf="user" class="nav-item">
-          <a class="nav-link" routerLink="" (click)="onLogoutClick()" >Logout</a>
+          <a class="nav-link" routerLink="" (click)="onLogoutClick()">Logout</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0" hidden>

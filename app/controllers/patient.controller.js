@@ -6,7 +6,7 @@ let Vital = require('mongoose').model('Vital');
 let CustomError = require('./error.controller');
 
 exports.readPatients = (req, res, next) => {
-    Patient.find({}, (err, patients)=> {
+    Patient.find({}).populate('userId').exec((err, patients)=> {
         if(err){
             console.log(err);
         }

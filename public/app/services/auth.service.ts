@@ -24,6 +24,7 @@ export class AuthService {
       .map(res => this.user = res.json())
       .catch(this.handleError);
   }
+
   private handleError(error: Response) {
     console.error(error);
     return Observable.throw(error.json() || 'Server Error');
@@ -48,6 +49,13 @@ export class AuthService {
     return this.http.post('api/signin', user, { headers: headers })
       .map(res => res.json());
   }
+
+  listPatients() : Observable<any> {
+    return this.http
+        .get('api/patients')
+        .map((res: Response) => res.json())
+        .catch(this.handleError);
+}
 
 /* 
   // Get Profile
