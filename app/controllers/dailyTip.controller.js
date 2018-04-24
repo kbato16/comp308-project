@@ -18,3 +18,17 @@ exports.create = (req, res) => {
         res.json(dailyTip);
     });
 }
+
+exports.listByPatientId = (req, res) => {
+    let patient = req.patient;
+    let query = { patientId: patient._id };
+
+    DailyTip.find(query, (err, dailyTips) => {
+        if (err) {
+            return res.status(400).send({
+                message: CustomError.getMongoDBErrorMessage(err)
+            });
+        }
+        res.json(dailyTips);
+    });
+}

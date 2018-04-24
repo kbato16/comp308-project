@@ -26,6 +26,7 @@ import { DailyTipCreateComponent } from './components/daily-tip/create/create.co
 import { PatientComponent } from './components/patient/patient.component';
 import { PatientListComponent } from './components/patient/list/list.component';
 import { DiagnoseComponent } from './components/vitals/diagnose/diagnose.component';
+import { DailyTipListComponent } from './components/daily-tip/list/list.component';
 
 // Services
 import { DataService } from './services/data.service';
@@ -52,7 +53,8 @@ import { AuthService } from './services/auth.service';
     DailyTipCreateComponent,
     PatientComponent,
     PatientListComponent,
-    DiagnoseComponent
+    DiagnoseComponent,
+    DailyTipListComponent
   ],
   imports: [
     BrowserModule,
