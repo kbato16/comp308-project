@@ -23,9 +23,15 @@ export class VitalsService {
   create(patientId: string, vitals): Observable<any> {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    console.log('User ID: ' + patientId);
     // Sends data to our backend node server
     return this._http.post(`${this._baseURL}/create/${patientId}`, vitals, { headers: headers })
+      .map(res => res.json());
+  }
+
+  diagnose(vitals): Observable<any> {
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this._http.post( 'api/diagnose', vitals, { headers: headers })
       .map(res => res.json());
   }
 
