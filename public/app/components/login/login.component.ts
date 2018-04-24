@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { LoginService } from "../../services/login.service";
+import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../../services/login.service';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 
@@ -8,7 +9,8 @@ import { FlashMessagesService } from 'angular2-flash-messages';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
+  
   errorMessage: string;
   credentials: any  = {};
   username: String;
@@ -17,29 +19,34 @@ export class LoginComponent {
   constructor(
     private loginService: LoginService, 
     private flashMessage: FlashMessagesService,
+    private authService: AuthService,
     private router: Router
   ) { }
 
+  ngOnInit(){
+
+  }
+
+/* 
   signIn(){
     this.loginService.signin(this.credentials).subscribe(result=>
       this.router.navigate(['/']),
       error =>this.errorMessage = error);
-  }
+  } */
 
   onLoginSubmit(){
-    console.log("Hello World!!!");
     const user = {
       username: this.username,
       password: this.password
     }
 
-    this.loginService.authenticateUser(user).subscribe(data => {
+    this.authService.authenticateUser(user).subscribe(data => {
       if(data.success){
-        // this.loginService.storeUserData(data.token, data.user);
+        this.authService.storeUserData(data.token, data.user);
         this.flashMessage.show('Login successful', {cssClass: 'alert-success', timeout: 5000});
         this.router.navigate(['/home']);
       } else {
-        this.flashMessage.show(data.msg, {cssClass: 'alert-danger', timeout: 5000});
+        this.flashMessage.show('Something went wrong...', {cssClass: 'alert-danger', timeout: 5000});
         this.router.navigate(['/login']);
       }
     });
